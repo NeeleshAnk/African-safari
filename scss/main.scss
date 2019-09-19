@@ -1,0 +1,65 @@
+@import "variable";
+@import "mixin";
+
+.header--top_nav{
+  text-align: right;
+}
+.email, .Call, .search{
+  font: Bold 11px/22px Muli;
+  color: $Very-dark_gray;
+  margin-right: 20px;
+  line-height: 2.7;
+}
+.email{
+  &::before{
+    content: "\f0e0";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+}
+.Call{
+  &::before{
+    content: "\f2a0";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+  &::after{
+    content: "\f107";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-left: 5px;
+  }
+}
+.search{
+  &::before{
+    content: "\f002";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+}
+a{
+  &:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.header--bottom_nav{
+  overflow: hidden;
+  background-color: $Very-light_gray;
+  .header--bottom_nav--logo{
+    display: inline-block;
+    margin-top: 6px;
+  }
+  a{
+    color: $Very-dark_gray;
+  }
+  ul{
+    float: right;
+    margin-bottom: 0;
+    line-height: 3;
+    margin: 6px 0;
+    li{
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+}

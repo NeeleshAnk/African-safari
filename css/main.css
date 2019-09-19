@@ -1,0 +1,51 @@
+/* MIXINS */
+.header--top_nav {
+  text-align: right; }
+
+.email, .Call, .search {
+  font: Bold 11px/22px Muli;
+  color: #3C3C3C;
+  margin-right: 20px;
+  line-height: 2.7; }
+
+.email::before {
+  content: "\f0e0";
+  font-family: 'Font Awesome\ 5 Free';
+  margin-right: 5px; }
+
+.Call::before {
+  content: "\f2a0";
+  font-family: 'Font Awesome\ 5 Free';
+  margin-right: 5px; }
+.Call::after {
+  content: "\f107";
+  font-family: 'Font Awesome\ 5 Free';
+  margin-left: 5px; }
+
+.search::before {
+  content: "\f002";
+  font-family: 'Font Awesome\ 5 Free';
+  margin-right: 5px; }
+
+a:hover {
+  text-decoration: none;
+  color: inherit; }
+
+.header--bottom_nav {
+  overflow: hidden;
+  background-color: #f8f8f8; }
+  .header--bottom_nav .header--bottom_nav--logo {
+    display: inline-block;
+    margin-top: 6px; }
+  .header--bottom_nav a {
+    color: #3C3C3C; }
+  .header--bottom_nav ul {
+    float: right;
+    margin-bottom: 0;
+    line-height: 3;
+    margin: 6px 0; }
+    .header--bottom_nav ul li {
+      margin-left: 10px;
+      display: inline-block; }
+
+/*# sourceMappingURL=main.css.map */
