@@ -6,7 +6,7 @@
 $path--rel      : "../images";
 
 @mixin flag-image($country-name) {
-    background-image: url('#{$path--rel}/#{$country-name}');
+  background-image: url('#{$path--rel}/#{$country-name}');
 }
 
 // ==========================================================
@@ -251,6 +251,51 @@ $position-props: top right bottom left z-index;
 
 @mixin rotateZ($deg) {
   @include transform(rotateZ(#{$deg}deg));
+}
+
+// Inline-Flexbox display
+@mixin inline-flex($display:false, $align-items:false, $flex-flow:false, $justify-content:false, $align-content:false, $flex:false) {
+  @if $display {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+
+  @if $flex-flow {
+    -webkit-flex-flow: $flex-flow;
+    -moz-flex-flow: $flex-flow;
+    -ms-flex-flow: $flex-flow;
+    flex-flow: $flex-flow;
+  }
+
+  @if $align-items {
+    align-items: $align-items;
+  }
+
+  @if $justify-content {
+    -webkit-justify-content: $justify-content;
+    -moz-justify-content: $justify-content;
+    -ms-justify-content: $justify-content;
+    justify-content: $justify-content;
+    -ms-flex-pack: $justify-content;
+  }
+
+  @if $align-content {
+    -webkit-align-content: $align-content;
+    -moz-align-content: $align-content;
+    -ms-align-content: $align-content;
+    align-content: $align-content;
+  }
+
+  @if $flex {
+    -webkit-box-flex: $flex;
+    -moz-box-flex: $flex;
+    -webkit-flex: $flex;
+    -ms-flex: $flex;
+    flex: $flex;
+  }
 }
 
 // Flexbox display
