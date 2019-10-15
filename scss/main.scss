@@ -1,0 +1,365 @@
+@import "variable";
+@import "mixin";
+
+@font-face {
+  font-family: 'Bookmania';
+  src: url('../font/Bookmania W01 Reg.eot'); /* IE9 Compat Modes */
+  src: url('../font/Bookmania W01 Reg.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../font/Bookmania W01 Reg.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../font/Bookmania W01 Reg.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../font/Bookmania W01 Reg.svg') format('svg'); /* Legacy iOS */
+}
+
+.header--top_nav{
+  text-align: right;
+}
+.email, .Call, .search{
+  font: Bold 11px/22px Muli;
+  color: $Very-dark_gray;
+  margin-right: 20px;
+  line-height: 2.7;
+}
+.email{
+  &::before{
+    content: "\f0e0";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+}
+.Call{
+  &::before{
+    content: "\f2a0";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+  &::after{
+    content: "\f107";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-left: 5px;
+  }
+}
+.search{
+  &::before{
+    content: "\f002";
+    font-family: 'Font Awesome\ 5 Free';
+    margin-right: 5px;
+  }
+}
+a{
+  &:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.header--bottom_nav{
+  overflow: hidden;
+  background-color: $Very-light_gray;
+  a{
+    color: $Very-dark_gray;
+    font: normal 14px/22px Muli;
+    position: relative;
+  }
+  .header--bottom_nav--logo{
+    display: inline-block;
+    margin-top: 6px;
+    color: #412611;
+    span{
+      @include fontSize(20);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+  }
+  ul{
+    float: right;
+    margin-bottom: 0;
+    line-height: 3;
+    margin: 6px 0;
+    li{
+      margin-left: 10px;
+      display: inline-block;
+      &:nth-child(5),
+      &:nth-child(6){
+        a{
+          &::after{
+            content: "\f107";
+            font-family: 'Font Awesome\ 5 Free';
+            @include absolute(top 80% left 45%);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.chat-box{
+  width: 189px;
+  height: 33px;
+  @include fixed(bottom 0 right 138px z-index 1);
+}
+
+#about-us{
+  padding: 77px 0;
+  @include global-bg-image("/AdobeStock_243796793_Preview_v2.png", center, cover);
+}
+.about-us__content{
+  text-align: center;
+  h2{
+    font: 400 48px/60px Bookmania;
+    color: $Very-dark_gray;
+  }
+  p{
+    font: 400 26px/33px Bookmania;
+    color: $Very-dark_gray;
+  }
+}
+.about-us__content--button{
+  a{
+    margin: 9px 0;
+  }
+  &> :nth-child(1){
+    background: $Light-yellow 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px $black-shadow;
+    width: 318px;
+    position: relative;
+    height: 55px;
+    font: Bold 13px/16px Muli;
+    color: $Very-dark_gray;
+    margin-right: 9px;
+    @include inline-flex(true, center, false, center, false, false);
+    &:after{
+      content: "";
+      @include absolute(top 44% right 25%);
+      border: solid $Very-dark_gray;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      @include transform(rotate(-45deg));
+    }
+    &:before{
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: $Very-dark_gray;
+      @include absolute(top 47% right 25%);
+    }
+  }
+  &> :nth-child(2){
+    background: $desaturated-dark-blue 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 6px $black-shadow;
+    width: 318px;
+    position: relative;
+    height: 55px;
+    font: Bold 13px/16px Muli;
+    color: $white;
+    @include inline-flex(true, center, false, center, false, false);
+    &:after{
+      content: "";
+      @include absolute(top 45% right 15%);
+      border: solid $Very-light_gray;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      @include transform(rotate(-45deg));
+    }
+    &:before{
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: $Very-light_gray;
+      @include absolute(top 49% right 15%);
+    }
+  }
+}
+.height-430{
+  height: 430px;
+}
+.about-us__read-more-button{
+  text-align: left;
+  margin: auto;
+  margin-top: 22px;
+  a{
+    position: relative;
+    margin-left: 84px;
+    padding-right: 40px;
+    color: $Very-dark_gray;
+    font: 400 11px/16px Muli;
+    &:after{
+      content: "";
+      @include absolute(top 39% right 0);
+      border: solid $Very-dark_gray;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      @include transform(rotate(-45deg));
+    }
+    &:before{
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: $Very-dark_gray;
+      @include absolute(top 52% right 0);
+    }
+  }
+}
+.about-us__rating-star{
+  color: $Very-dark_gray;
+  .fa-star{
+    color: $light-brown;
+  }
+}
+.about-us__rating{
+  p{
+    font: 400 20px/25px Bookmania;
+  }
+}
+.about-us__awards{
+  text-align: left;
+  padding-left: 111px;
+  @media screen and (max-width: 600px) {
+    padding: 0;
+    text-align: center;
+  }
+  p{
+    font: 400 16px/23px Muli;
+  }
+  .award-block{
+    img{
+      width: 77px;
+      height: 77px;
+    }
+  }
+}
+.about-us__description{
+  overflow: hidden;
+  text-align: center;
+  padding: 40px 0;
+  @include global-bg-image("/Screenshot 2019-07-25 at 12.26.40.png", left, contain);
+  background-size: 558px 455px;
+  h3{
+    margin-top: 84px;
+    font: 400 24px/30px Bookmania;
+  }
+  p{
+    font: 400 16px/23px Muli;
+  }
+}
+
+#experiences{
+  margin-top: 100px;
+  h4{
+    font: 400 20px/25px Bookmania;
+    color: $Very-dark_gray;
+    margin-bottom: 30px;
+    margin-left: 10px;
+  }
+}
+.experiences-gallery{
+  a{
+    display: inline-block;
+    position: relative;
+    margin: 0 6px 30px;
+  }
+  span{
+    @include absolute(bottom 0 left 10%);
+    font: 400 18px/26px Bookmania;
+    color: $Very-light_gray;
+  }
+  img{
+    &:hover{
+      transform: scale(1.1);
+      @include relative(top 13px);
+      transition: .3s ease-out;
+    }
+  }
+}
+.experiences-gallery__all-sample{
+  text-align: right;
+  margin-top: 20px;
+  a{
+    text-align: right;
+    margin-right: 10px;
+    font: 400 13px/16px Muli;
+    color: $Very-dark_gray;
+    padding-right: 30px;
+    position: relative;
+    &:after{
+      content: "";
+      @include absolute(top 39% right 0);
+      border: solid $Very-dark_gray;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      @include transform(rotate(-45deg));
+    }
+    &:before{
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: $Very-dark_gray;
+      @include absolute(top 52% right 0);
+    }
+  }
+}
+
+#popular-location{
+  margin-top: 124px;
+  padding-bottom: 100px;
+  h4{
+    font: 400 20px/25px Bookmania;
+  }
+}
+.location-gallery{
+  margin-top: 30px;
+  text-align: center;
+  a{
+    position: relative;
+    span, small{
+      @include align(true, true, absolute);
+      color: $Very-light_gray;
+      font: 400 20px/25px Bookmania;
+      width: 100%;
+    }
+    small{
+      padding-top: 20px;
+      top: 60%;
+      font: Bold 12px/16px Muli;
+      &:before{
+        @include align(true, true, absolute);
+        content: "";
+        width: 30px;
+        top: 10px;
+        height: 2px;
+        background: $Light-yellow;
+      }
+    }
+  }
+}
+.slick-slide{
+  img{
+    display: inline-block;
+  }
+}
+
+.slick-arrow{
+  background: $light-brown;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.fa-caret-left, .fa-caret-right{
+  @include absolute(top 110% left 10%);
+  color: $Very-light_gray;
+  &:before{
+    @include relative(top 20%);
+  }
+}
+.fa-caret-right{
+  left: 13%;
+}
+.carousel{
+  max-width: 350px;
+}
+.carousel-inner{
+  img{
+    max-width: 350px;
+    height: 436px;
+  }
+}
