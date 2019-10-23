@@ -18,15 +18,41 @@
       <div class="container">
         <a href="#" class="email">email@zambezi.com</a>
         <a href="#" class="Call">Call your country rep</a>
-        <a href="#" class="search">Search</a>
+        <a href="#" class="search" onclick="openNav()">Search</a>
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#" class="search">Search</a>
+            <input type="text" name="" value="" placeholder="Type your search here">
+            <small>Press Enter to search, or Esc to cancel</small>
+            <div class="find-contact">
+              <small>Can’t find what you’re looking for?</small>
+              <a href="#">Contact Us</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- header top nav ends -->
     <!-- header bottom nav -->
-    <div class="header--bottom_nav">
-      <div class="container clearfix">
-        <div class="header--bottom_nav--logo">
-          <a href="#"><span>Zambegi</span> <br> safari & travel</a>
+    <div class="header--bottom_nav clearfix">
+      <div class="container">
+        <div class="header--bottom_nav--logo clearfix">
+          <a href="#"><span>Zambegi</span> <br><small>safari & travel</small></a>
+        </div>
+        <div class="mobile-icon">
+          <a href="#"><i class="far fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone-volume"></i></a>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+          <div id="myNav2" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
         </div>
         <ul>
           <li><a href="#">Trip Builder</a></li>
@@ -157,6 +183,8 @@
       <!-- experiences ends -->
       <!-- popular location -->
       <section id="popular-location">
+        <div class="popular-location__wrapper">
+        </div>
         <div class="container">
           <h4>Popular Locations</h4>
         </div>
@@ -194,28 +222,385 @@
         </div>
       </section>
       <!-- popular location ends -->
-    </div>
+      <!-- countries -->
+      <section id="countries">
+        <div class="container">
+          <h4>Countries</h4>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="#">
+                  <img src="images/luangwa_aerial.png" alt="luangwa_aerial">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Gabon</span>
+                  <small>CENTRAL AFRICA</small>
+                </a>
+                <a href="#">
+                  <img src="images/sf_hwange_hide_ellies_1920.png" alt="sf_hwange_hide_ellies_1920">
+                  <img src="images/2000px-Flag_of_Zimbabwe.svg_-150x150.png" alt="2000px-Flag_of_Zimbabwe.svg_-150x150">
+                  <span>Zimbabwe</span>
+                  <small>SOUTHERN AFRICA</small>
+                </a>
+                <a href="#">
+                  <img src="images/imageedit_3_5017320416.png" alt="imageedit_3_5017320416">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Botswana</span>
+                  <small>SOUTHERN AFRICA</small>
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/Adansonia_grandidieri_Pat_Hooper.png" alt="Adansonia_grandidieri_Pat_Hooper">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Madagascar</span>
+                  <small>INDIAN OCEAN ISLANDS</small>
+                </a>
+                <a href="#">
+                  <img src="images/himba_kunene_namibia.png" alt="himba_kunene_namibia">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Namibia</span>
+                  <small>SOUTHERN AFRICA</small>
+                </a>
+                <a href="#">
+                  <img src="images/sf_mana_buffalo_1920.png" alt="sf_mana_buffalo_1920">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Tanzania</span>
+                  <small>EASTERN AFRICA</small>
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="#">
+                  <img src="images/ABC_cover_1920x1080.png" alt="ABC_cover_1920x1080">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>Kenya</span>
+                  <small>EASTERN AFRICA</small>
+                </a>
+                <a href="#">
+                  <img src="images/Ongava_Reserve_black-rhinoD.png" alt="Ongava_Reserve_black-rhinoD">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>South Africa</span>
+                  <small>SOUTHERN AFRICA</small>
+                </a>
+                <a href="#">
+                  <img src="images/praia-sundy-principe-island-timbuktu-travel.png" alt="praia-sundy-principe-island-timbuktu-travel">
+                  <img src="images/Botswana_flag-325x150.png" alt="Botswana_flag">
+                  <span>São Tomé & Principé</span>
+                  <small>CENTRAL AFRICA</small>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="countries__all-button">
+            <a href="#">View all countries</a>
+          </div>
+        </div>
+      </section>
+      <!-- countries ends-->
+      <!-- uncovering africa -->
+      <section id="uncovering-africa">
+        <div class="uncovering-africa__description">
+          <h4>Uncovering Africa</h4>
+          <p>
+            This magnificent continent has so much to offer it’s difficult choosing the perfect safari to match your budget and time constraints.</p>
+          </p>
+          <p>
+            With an intimate knowledge of each region, the secret gems and hidden “turkeys”, our team can build the ideal safari just for you.
+          </p>
+          <a href="#">About Us</a>
+        </div>
+      </section>
+      <!-- uncovering africa ends-->
+      <!-- testimonials -->
+      <section id="testimonials">
+        <div class="container">
+          <h4>Testimonials</h4>
+          <div id="testimonials-zambazi" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators carousel-indicators__dot">
+              <li data-target="#testimonials-zambazi" data-slide-to="0" class="active"></li>
+              <li data-target="#testimonials-zambazi" data-slide-to="1"></li>
+              <li data-target="#testimonials-zambazi" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="testimonial-content">
+                  <p>
+                    “Great choice of camps and lodges, all extremely <br> well organized with clear directions. Wonderful <br> overall experience.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Jennifer Bruce</small>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>
+                    “We received excellent service from Zambezi Safari <br> and Travel Company. The level of communication was <br> perfect - not too much or too little.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Meghan Warren</small>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-content">
+                  <p>
+                    “Great choice of camps and lodges, all extremely <br> well organized with clear directions. Wonderful <br> overall experience.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Jennifer Bruce</small>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>
+                    “We received excellent service from Zambezi Safari <br> and Travel Company. The level of communication was <br> perfect - not too much or too little.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Meghan Warren</small>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-content">
+                  <p>
+                    “Great choice of camps and lodges, all extremely <br> well organized with clear directions. Wonderful <br> overall experience.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Jennifer Bruce</small>
+                  </div>
+                </div>
+                <div class="testimonial-content">
+                  <p>
+                    “We received excellent service from Zambezi Safari <br> and Travel Company. The level of communication was <br> perfect - not too much or too little.”
+                  </p>
+                  <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span></span>
+                    <small>Meghan Warren</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#">Read more testimonials</a>
+        </div>
+      </section>
+      <!-- testimonials ends -->
+      <!-- contact -->
+      <section id="Contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <h4>Get in touch</h4>
+              <p>Lorem ipsum dolor sit amet,<br> consetetur sadipscing elitr.</p>
+              <p><strong>Telephone</strong> <br>000 0000 0000</p>
+              <p><strong>Email</strong> <br>email@zambezi.com</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 text-left enquiry-form">
+              <h4>Enquiry form</h4>
+              <div class="row">
+                <div class="col-12 col-md-6 pr-md-0">
+                  <p>First name*</p>
+                  <input type="text">
+                  <p>Last name*</p>
+                  <input type="text">
+                  <p>Phone number*</p>
+                  <input type="text">
+                </div>
+                <div class="col-12 col-md-6 pl-md-2 text-left">
+                  <p>Email*</p>
+                  <input type="text">
+                  <p>How would you like to be contacted?*</p>
+                  <label>
+                    <select>
+                      <option value="0">Select option</option>
+                      <option value="1">Audi</option>
+                      <option value="2">BMW</option>
+                      <option value="3">Citroen</option>
+                      <option value="4">Ford</option>
+                    </select>
+                  </label>
+                  <p>Reason for enquiry</p>
+                  <label>
+                    <select>
+                      <option value="0">Select option</option>
+                      <option value="1">Audi</option>
+                      <option value="2">BMW</option>
+                      <option value="3">Citroen</option>
+                      <option value="4">Ford</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <p>Message</p>
+              <textarea name="name" rows="4" cols="51"></textarea>
+              <a href="#">Help us help you. Add additional information (not required)</a>
+              <span>Show additional fields <i class="fas fa-plus"></i></span>
+              <label class="checkbox">I would like to receive the latest news, views, reviews and monthly updates from East, Central and Southern Africa.
+                <input type="checkbox" checked="">
+                <span class="checkmark"></span>
+              </label>
+              <div class="submit-btn">
+                <a href="#" class="">Submit</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact ends -->
   </div>
-  <!-- main content ends -->
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    $('.location-gallery').slick({
-      centerMode: true,
-      slidesToShow: 4,
-      arrows: true,
-      autoplay: true,
-      autoplaySpeed: 4000,
-      nextArrow: '<i class="fas fa-caret-right"></i>',
-      prevArrow: '<i class="fas fa-caret-left"></i>',
-      responsive: [{
+</div>
+<!-- main content ends -->
+<!-- footer -->
+<footer>
+  <div class="container">
+    <div class="newsletter">
+      <p>Subscribe to <br>our newsletter</p>
+      <span>Full name*</span>
+      <input type="text">
+      <span>Email*</span>
+      <input type="text">
+      <div class="submit-btn">
+        <a href="#">Submit</a>
+      </div>
+    </div>
+    <div class="footer-logo">
+      <img src="images/current_logo.png" alt="current_logo">
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-12">
+        <ul>
+          <li><a href="#">Navigation</a></li>
+          <li><a href="#">Trip Builder</a></li>
+          <li><a href="#">Safaris Inspiration</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-12">
+        <ul>
+          <li><a href="#">Useful Links</a></li>
+          <li><a href="#">Advice</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Meet the Team</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-12">
+        <ul>
+          <li><a href="#">Call us</a></li>
+          <li><a href="#">USA: +1 (347) 708 1794 </a></li>
+          <li><a href="#">UK: +44(0)1752 878858</a></li>
+          <li><a href="#">CAN: +1 (647) 694 1402</a></li>
+          <li><a href="#">AUS: +61 (2) 8417 2176</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-12">
+        <ul>
+          <li><a href="#">International Offices</a></li>
+          <li><a href="#">USA Office</a></li>
+          <li><a href="#">UK Office</a></li>
+          <li><a href="#">Victoria Falls Office</a></li>
+          <li><a href="#">Kariba Office</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-12">
+        <p>Social</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="partners">
+          <p>Partners</p>
+          <div class="Atta_logo">
+            <img src="images/ATTALogo.png" alt="Atta_logo">
+            <img src="images/ATTALogo.png" alt="Atta_logo">
+            <img src="images/ATTALogo.png" alt="Atta_logo">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="google-img d-inline-block">
+      <img src="images/Image 5.png" alt="google-img">
+    </div>
+    <div class="about-us__rating-star d-inline-block">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <span class="rating-number">4.9</span>
+    </div>
+    <p class="policy">Privacy Policy | Terms & Conditions | © Zambezi Safari & Travel Company Ltd, 6 Delamore Park, Pitman’s Lane, Cornwood, Ivybridge, PL21 9QP, United Kingdom | Website by Vertical Leap</p>
+  </div>
+</footer>
+<!-- footer ends-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.location-gallery').slick({
+    centerMode: true,
+    slidesToShow: 4,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    nextArrow: '<i class="fas fa-caret-right"></i>',
+    prevArrow: '<i class="fas fa-caret-left"></i>',
+    responsive: [
+      {
         breakpoint: 1024,
         settings: {
           centerMode: true,
@@ -230,12 +615,43 @@
       }, {
         breakpoint: 420,
         settings: {
-          centerMode: true,
+          centerMode: false,
           slidesToShow: 1
         }
       }]
     });
+    $('.experiences-gallery').slick({
+      centerMode: true,
+      slidesToShow: 4,
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      nextArrow: '<i class="fas fa-caret-right"></i>',
+      prevArrow: '<i class="fas fa-caret-left"></i>',
+      responsive: [
+        {
+          breakpoint: 9999,
+          settings: "unslick"
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            centerMode: false,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
   });
-  </script>
+  function openNav() {
+    document.getElementById("myNav").style.display = "block";
+    document.getElementById("myNav2").style.display = "block";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.display = "none";
+    document.getElementById("myNav2").style.display = "none";
+  }
+</script>
 </body>
 </html>
