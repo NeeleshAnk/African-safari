@@ -5,8 +5,35 @@
   /* IE9 Compat Modes */
   src: url("../font/Bookmania W01 Reg.woff2") format("woff2"), url("../font/Bookmania W01 Reg.woff") format("woff"), url("../font/Bookmania W01 Reg.ttf") format("truetype"), url("../font/Bookmania W01 Reg.svg") format("svg");
   /* Legacy iOS */ }
+html {
+  scroll-behavior: smooth; }
+
+::selection {
+  color: #000;
+  background: cyan; }
+
+h4 {
+  font: 600 20px/25px Bookmania;
+  margin-bottom: 20px; }
+
 .header--top_nav {
   text-align: right; }
+  @media screen and (max-width: 767px) {
+    .header--top_nav {
+      display: none; } }
+  .header--top_nav .overlay {
+    background-image: url("../images/contours.png");
+    background-repeat: no-repeat;
+    background-position: right top -106%;
+    background-size: auto; }
+  .header--top_nav .overlay-content {
+    top: 10%; }
+  .header--top_nav .closebtn {
+    background: #d8d8d8;
+    color: #3C3C3C;
+    width: 42px;
+    font-size: 2.25em !important;
+    line-height: 26px; }
 
 .email, .Call, .search {
   font: Bold 11px/22px Muli;
@@ -42,22 +69,47 @@ a:hover {
   background-color: #f8f8f8; }
   .header--bottom_nav a {
     color: #3C3C3C;
-    font: normal 14px/22px Muli;
-    position: relative; }
-  .header--bottom_nav .header--bottom_nav--logo {
+    position: relative;
     display: inline-block;
+    font: 400 14px/22px Muli; }
+  .header--bottom_nav small {
+    font: 400 14px/22px Muli; }
+    @media screen and (max-width: 767px) {
+      .header--bottom_nav small {
+        display: none; } }
+  .header--bottom_nav .header--bottom_nav--logo {
     margin-top: 6px;
-    color: #412611; }
+    color: #412611;
+    display: inline-block; }
+    @media screen and (max-width: 767px) {
+      .header--bottom_nav .header--bottom_nav--logo {
+        line-height: 82px; } }
     .header--bottom_nav .header--bottom_nav--logo span {
       font-size: 1.25rem;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 5px; }
+      letter-spacing: 5px;
+      display: inline-block; }
+  .header--bottom_nav .mobile-icon {
+    float: right;
+    line-height: 82px;
+    margin-top: 6px;
+    display: inline-block; }
+    .header--bottom_nav .mobile-icon a {
+      display: inline-block;
+      margin: 10px;
+      font-size: 1.5625rem; }
+    @media screen and (min-width: 768px) {
+      .header--bottom_nav .mobile-icon {
+        display: none; } }
   .header--bottom_nav ul {
     float: right;
     margin-bottom: 0;
     line-height: 3;
     margin: 6px 0; }
+    @media screen and (max-width: 767px) {
+      .header--bottom_nav ul {
+        display: none; } }
     .header--bottom_nav ul li {
       margin-left: 10px;
       display: inline-block; }
@@ -69,6 +121,106 @@ a:hover {
         left: 45%;
         font-weight: bold; }
 
+.overlay {
+  height: 100%;
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #272727;
+  overflow-x: hidden;
+  transition: 0.5s; }
+  .overlay .search {
+    font: 600 24px/30px Bookmania;
+    margin: 32px 0;
+    display: inline-block !important; }
+  .overlay small {
+    font: Italic 13px/16px Muli;
+    color: #9f9f9f; }
+  .overlay input {
+    border: 1px solid #d8d8d8;
+    background: none;
+    padding: 20px;
+    width: 603px;
+    line-height: 50px;
+    outline: none;
+    margin: auto;
+    margin-bottom: 20px;
+    display: block; }
+    .overlay input::-webkit-input-placeholder {
+      font: Italic 26px/33px Muli;
+      color: #9f9f9f; }
+    .overlay input::-moz-placeholder {
+      font: Italic 26px/33px Muli;
+      color: #9f9f9f; }
+    .overlay input:-ms-input-placeholder {
+      font: Italic 26px/33px Muli;
+      color: #9f9f9f; }
+    .overlay input::-ms-input-placeholder {
+      font: Italic 26px/33px Muli;
+      color: #9f9f9f; }
+    .overlay input::placeholder {
+      font: Italic 26px/33px Muli;
+      color: #9f9f9f; }
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 2.25rem;
+    color: #FFFFFF;
+    display: block !important;
+    transition: 0.3s; }
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3.75rem; }
+
+.overlay-content {
+  width: 100%;
+  position: relative;
+  top: 25%;
+  text-align: center;
+  margin-top: 30px; }
+
+.find-contact {
+  background: #3C3C3C;
+  padding: 50px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+  .find-contact small {
+    color: #f8f8f8 !important;
+    display: block; }
+  .find-contact a {
+    font: 400 13px/16px Muli;
+    margin: 32px 0 0;
+    display: inline-block !important;
+    font-size: 13px !important;
+    position: relative;
+    padding-right: 40px; }
+    .find-contact a:after {
+      content: "";
+      position: absolute;
+      top: 46%;
+      right: 0;
+      border: solid #3C3C3C;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .find-contact a:before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: #3C3C3C;
+      position: absolute;
+      top: 52%;
+      right: 2px; }
+
 .chat-box {
   width: 189px;
   height: 33px;
@@ -77,9 +229,12 @@ a:hover {
   bottom: 0;
   z-index: 1; }
 
+.content {
+  overflow: hidden; }
+
 #about-us {
-  padding: 77px 0;
-  background-image: url("../images//AdobeStock_243796793_Preview_v2.png");
+  padding: 77px 0 0;
+  background-image: url("../images/AdobeStock_243796793_Preview_v2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover; }
@@ -87,23 +242,35 @@ a:hover {
 .about-us__content {
   text-align: center; }
   .about-us__content h2 {
-    font: 400 48px/60px Bookmania;
+    font: 600 48px/60px Bookmania;
     color: #3C3C3C; }
+    @media screen and (max-width: 767px) {
+      .about-us__content h2 {
+        font: 600 38px/48px Bookmania;
+        margin-bottom: 13px; } }
+  @media screen and (max-width: 767px) {
+    .about-us__content .about-us__rating {
+      margin-top: 50px !important;
+      text-align: left;
+      margin-bottom: 50px; }
+      .about-us__content .about-us__rating p {
+        text-align: left !important; }
+      .about-us__content .about-us__rating .about-us__read-more-button a {
+        margin-left: 10px; } }
   .about-us__content p {
-    font: 400 26px/33px Bookmania;
+    font: 600 26px/33px Bookmania;
     color: #3C3C3C; }
 
-.about-us__content--button a {
-  margin: 9px 0; }
-.about-us__content--button > :nth-child(1) {
-  background: #ffdb58 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  width: 318px;
+@media screen and (max-width: 767px) {
+  .about-us__content--button, .submit-btn {
+    margin-top: 100px; } }
+.about-us__content--button a, .submit-btn a {
+  margin: 9px 0;
+  width: 100%;
+  max-width: 318px;
   position: relative;
   height: 55px;
   font: Bold 13px/16px Muli;
-  color: #3C3C3C;
-  margin-right: 9px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -114,8 +281,13 @@ a:hover {
   -moz-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  -ms-flex-pack: center; }
-  .about-us__content--button > :nth-child(1):after {
+  -ms-flex-pack: center;
+  box-shadow: 0px 3px 6px #00000029; }
+.about-us__content--button > :nth-child(1), .submit-btn > :nth-child(1) {
+  background: #ffdb58 0% 0% no-repeat padding-box;
+  color: #3C3C3C;
+  margin-right: 9px; }
+  .about-us__content--button > :nth-child(1):after, .submit-btn > :nth-child(1):after {
     content: "";
     position: absolute;
     top: 44%;
@@ -127,7 +299,7 @@ a:hover {
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
-  .about-us__content--button > :nth-child(1):before {
+  .about-us__content--button > :nth-child(1):before, .submit-btn > :nth-child(1):before {
     content: "";
     width: 20px;
     height: 2px;
@@ -135,26 +307,10 @@ a:hover {
     position: absolute;
     top: 47%;
     right: 25%; }
-.about-us__content--button > :nth-child(2) {
+.about-us__content--button > :nth-child(2), .submit-btn > :nth-child(2) {
   background: #415b74 0% 0% no-repeat padding-box;
-  box-shadow: 0px 2px 6px #00000029;
-  width: 318px;
-  position: relative;
-  height: 55px;
-  font: Bold 13px/16px Muli;
-  color: #FFFFFF;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -moz-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center; }
-  .about-us__content--button > :nth-child(2):after {
+  color: #FFFFFF; }
+  .about-us__content--button > :nth-child(2):after, .submit-btn > :nth-child(2):after {
     content: "";
     position: absolute;
     top: 45%;
@@ -166,7 +322,7 @@ a:hover {
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
-  .about-us__content--button > :nth-child(2):before {
+  .about-us__content--button > :nth-child(2):before, .submit-btn > :nth-child(2):before {
     content: "";
     width: 20px;
     height: 2px;
@@ -175,8 +331,9 @@ a:hover {
     top: 49%;
     right: 15%; }
 
-.height-430 {
-  height: 430px; }
+@media screen and (min-width: 768px) {
+  .height-430 {
+    height: 430px; } }
 
 .about-us__read-more-button {
   text-align: left;
@@ -215,7 +372,7 @@ a:hover {
     color: #AC9A85; }
 
 .about-us__rating p {
-  font: 400 20px/25px Bookmania; }
+  font: 600 20px/25px Bookmania; }
 
 .about-us__awards {
   text-align: left;
@@ -234,22 +391,20 @@ a:hover {
   overflow: hidden;
   text-align: center;
   padding: 40px 0;
-  background-image: url("../images//Screenshot 2019-07-25 at 12.26.40.png");
+  background-image: url("../images/Screenshot 2019-07-25 at 12.26.40.png");
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;
   background-size: 558px 455px; }
   .about-us__description h3 {
     margin-top: 84px;
-    font: 400 24px/30px Bookmania; }
+    font: 600 24px/30px Bookmania; }
   .about-us__description p {
     font: 400 16px/23px Muli; }
 
 #experiences {
-  margin-top: 100px; }
+  margin-top: 60px; }
   #experiences h4 {
-    font: 400 20px/25px Bookmania;
-    color: #3C3C3C;
     margin-bottom: 30px;
     margin-left: 10px; }
 
@@ -257,29 +412,62 @@ a:hover {
   display: inline-block;
   position: relative;
   margin: 0 6px 30px; }
+  .experiences-gallery a:nth-child(5) span:before {
+    position: absolute;
+    bottom: -16%;
+    left: 50px; }
+  .experiences-gallery a:nth-child(5) span:after {
+    position: absolute;
+    bottom: -19%;
+    left: 65px; }
+  .experiences-gallery a:hover img {
+    transform: scale(1.1);
+    position: relative;
+    top: 13px;
+    transition: .3s ease-out; }
+  .experiences-gallery a:hover span:before {
+    display: block; }
+  .experiences-gallery a:hover span:after {
+    display: block; }
 .experiences-gallery span {
   position: absolute;
   bottom: 0;
   left: 10%;
   font: 400 18px/26px Bookmania;
   color: #f8f8f8; }
-.experiences-gallery img:hover {
-  transform: scale(1.1);
-  position: relative;
-  top: 13px;
-  transition: .3s ease-out; }
+  .experiences-gallery span:after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: -29%;
+    left: 17px;
+    border: solid #f8f8f8;
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .experiences-gallery span:before {
+    display: none;
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #f8f8f8;
+    position: absolute;
+    bottom: -23%; }
 
-.experiences-gallery__all-sample {
+.experiences-gallery__all-sample, .countries__all-button, .uncovering-africa__description, #testimonials {
   text-align: right;
   margin-top: 20px; }
-  .experiences-gallery__all-sample a {
+  .experiences-gallery__all-sample a, .countries__all-button a, .uncovering-africa__description a, #testimonials a {
     text-align: right;
     margin-right: 10px;
     font: 400 13px/16px Muli;
     color: #3C3C3C;
     padding-right: 30px;
     position: relative; }
-    .experiences-gallery__all-sample a:after {
+    .experiences-gallery__all-sample a:after, .countries__all-button a:after, .uncovering-africa__description a:after, #testimonials a:after {
       content: "";
       position: absolute;
       top: 39%;
@@ -291,7 +479,7 @@ a:hover {
       -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg); }
-    .experiences-gallery__all-sample a:before {
+    .experiences-gallery__all-sample a:before, .countries__all-button a:before, .uncovering-africa__description a:before, #testimonials a:before {
       content: "";
       width: 20px;
       height: 2px;
@@ -301,17 +489,19 @@ a:hover {
       right: 0; }
 
 #popular-location {
+  background-image: url("../images/contours.png");
+  background-repeat: no-repeat;
+  background-position: right -436px top -164px;
+  background-size: auto;
   margin-top: 124px;
   padding-bottom: 100px; }
-  #popular-location h4 {
-    font: 400 20px/25px Bookmania; }
 
-.location-gallery {
+.location-gallery, #countries {
   margin-top: 30px;
   text-align: center; }
-  .location-gallery a {
+  .location-gallery a, #countries a {
     position: relative; }
-    .location-gallery a span, .location-gallery a small {
+    .location-gallery a span, #countries a span, .location-gallery a small, #countries a small {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -321,11 +511,11 @@ a:hover {
       color: #f8f8f8;
       font: 400 20px/25px Bookmania;
       width: 100%; }
-    .location-gallery a small {
+    .location-gallery a small, #countries a small {
       padding-top: 20px;
       top: 60%;
       font: Bold 12px/16px Muli; }
-      .location-gallery a small:before {
+      .location-gallery a small:before, #countries a small:before {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -339,7 +529,9 @@ a:hover {
         background: #ffdb58; }
 
 .slick-slide img {
-  display: inline-block; }
+  width: 95%;
+  height: auto;
+  margin: auto; }
 
 .slick-arrow {
   background: #AC9A85;
@@ -358,12 +550,403 @@ a:hover {
 
 .fa-caret-right {
   left: 13%; }
+  @media screen and (max-width: 767px) {
+    .fa-caret-right {
+      left: 20%; } }
 
-.carousel {
-  max-width: 350px; }
+.carousel-item > a {
+  padding: 0 5px; }
 
 .carousel-inner img {
-  max-width: 350px;
+  width: 357px;
   height: 436px; }
+.carousel-inner a {
+  display: inline-block; }
+  .carousel-inner a:nth-child(2) {
+    margin: 18px 0; }
+
+.carousel-indicators {
+  top: 103%;
+  margin-left: 0;
+  justify-content: flex-start; }
+  @media screen and (max-width: 767px) {
+    .carousel-indicators {
+      top: 101%; } }
+
+.carousel-indicators li {
+  background-color: #AC9A85; }
+  .carousel-indicators li.active {
+    background-color: #415b74; }
+
+#countries {
+  margin-bottom: 100px;
+  padding-top: 30px;
+  background-image: url("../images/contours.png");
+  background-repeat: no-repeat;
+  background-position: -436px;
+  background-size: auto; }
+  #countries a span {
+    top: 84%;
+    font: 400 26px/32px Bookmania; }
+  #countries a small {
+    top: 90%; }
+  #countries img:nth-child(2) {
+    position: absolute;
+    top: 73%;
+    left: 46%;
+    max-width: 30px;
+    width: 100%;
+    height: 20px; }
+  #countries h4 {
+    margin-bottom: 27px;
+    text-align: left;
+    margin-left: 15px; }
+
+.countries__all-button {
+  text-decoration: underline;
+  margin-right: 20px; }
+  @media screen and (max-width: 767px) {
+    .countries__all-button {
+      margin: 0;
+      position: relative;
+      top: 50px; } }
+  .countries__all-button a {
+    color: #415b74; }
+    .countries__all-button a:before {
+      background: #415b74; }
+    .countries__all-button a:after {
+      border-color: #415b74; }
+
+#uncovering-africa {
+  overflow: hidden;
+  background-image: url("../images/himba_kunene_namibia.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: auto; }
+
+.uncovering-africa__description {
+  background: #FFFFFF;
+  padding: 41px 43px;
+  padding-right: 0;
+  margin: 150px 0;
+  max-width: 470px;
+  text-align: left; }
+  @media screen and (min-width: 1200px) {
+    .uncovering-africa__description {
+      position: relative;
+      left: 53%; } }
+  .uncovering-africa__description p {
+    color: #3C3C3C;
+    font: 400 16px/23px Muli; }
+  .uncovering-africa__description a {
+    text-decoration: underline;
+    color: #415b74; }
+    .uncovering-africa__description a:before {
+      background: #415b74; }
+    .uncovering-africa__description a:after {
+      border-color: #415b74; }
+
+#testimonials {
+  padding-bottom: 50px;
+  margin-top: 48px;
+  text-align: left; }
+  #testimonials .fa-star {
+    color: #ffdb58;
+    font-size: 1.4375rem; }
+  #testimonials a {
+    margin-top: 30px;
+    display: inline-block; }
+
+.testimonial-content {
+  display: inline-block;
+  padding: 25px 40px 30px;
+  border: 2px solid #AC9A85; }
+  .testimonial-content:nth-child(1) {
+    margin-right: 28px; }
+  .testimonial-content small {
+    font: 400 11px/16px Muli; }
+  .testimonial-content span {
+    position: relative;
+    top: 6px;
+    width: 1px;
+    height: 24px;
+    display: inline-block;
+    background: #415b74;
+    margin: 0 10px; }
+  .testimonial-content p {
+    font: 400 Italic 18px/26px Bookmania; }
+
+.carousel-indicators__dot {
+  bottom: unset;
+  top: 30%;
+  flex-direction: column;
+  right: -12%;
+  left: unset;
+  margin-left: 33px; }
+  .carousel-indicators__dot li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    color: #AC9A85; }
+    .carousel-indicators__dot li.active {
+      background-color: #ffdb58; }
+
+.social-icons a {
+  margin: 0 3px;
+  display: inline-block; }
+.social-icons .fab {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  background: #AC9A85;
+  color: #FFFFFF; }
+
+#Contact {
+  margin-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+  background-image: url("../images/enquire-bg-1.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+  #Contact strong {
+    font: 600 18px/26px Bookmania; }
+  #Contact p {
+    margin: 18px 0 13px;
+    font: 400 16px/23px Muli; }
+  #Contact .enquiry-form {
+    border: 1px solid #d8d8d8;
+    padding: 44px;
+    margin-top: 25px; }
+    @media screen and (max-width: 767px) {
+      #Contact .enquiry-form {
+        padding: 44px 25px;
+        max-width: 90%;
+        margin: 40px auto 0; } }
+    @media screen and (min-width: 768px) {
+      #Contact .enquiry-form {
+        position: relative;
+        top: -45px;
+        margin-top: 0; } }
+    #Contact .enquiry-form input {
+      line-height: 45px;
+      border: 1px solid #d8d8d8;
+      max-width: 260px;
+      width: 100%;
+      background: #f8f8f8; }
+    #Contact .enquiry-form label {
+      width: 100%;
+      margin: 0;
+      position: relative; }
+      #Contact .enquiry-form label:after {
+        cursor: pointer;
+        content: "\f107";
+        font-family: 'Font Awesome\ 5 Free';
+        position: absolute;
+        top: 30%;
+        right: 10%;
+        font-weight: bold;
+        color: #9f9f9f; }
+    #Contact .enquiry-form select {
+      background: #f8f8f8;
+      line-height: 45px;
+      border: 1px solid #d8d8d8;
+      padding: 14px 0;
+      padding-left: 20px;
+      max-width: 260px;
+      width: 100%;
+      height: 49px;
+      font: Italic 13px/16px Muli;
+      color: #9f9f9f;
+      -moz-appearance: none;
+      /* Firefox */
+      -webkit-appearance: none;
+      /* Safari and Chrome */ }
+    #Contact .enquiry-form p {
+      font: 400 11px/16px Muli; }
+    @media screen and (max-width: 767px) {
+      #Contact .enquiry-form a {
+        max-width: 60%; } }
+    #Contact .enquiry-form a,
+    #Contact .enquiry-form span {
+      text-decoration: underline;
+      font: 400 11px/16px Muli;
+      color: #3C3C3C;
+      margin-top: 10px;
+      display: inline-block;
+      margin-bottom: 20px; }
+    #Contact .enquiry-form span {
+      margin-left: 50px;
+      text-decoration: none;
+      cursor: pointer; }
+      @media screen and (max-width: 767px) {
+        #Contact .enquiry-form span {
+          max-width: 30%;
+          margin-left: 18px; }
+          #Contact .enquiry-form span .fa-plus {
+            position: relative;
+            top: -30px;
+            left: 10px; } }
+    #Contact .enquiry-form textarea {
+      max-width: 100%;
+      margin-top: 5px; }
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  cursor: pointer;
+  font: 400 11px/16px Muli;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add a blue background */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */ }
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+  .checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    margin: 0 !important;
+    background: #f8f8f8;
+    border: 1px solid #d8d8d8; }
+  .checkbox:hover input ~ .checkmark {
+    background-color: #d8d8d8; }
+  .checkbox input:checked ~ .checkmark {
+    background-color: #2196F3; }
+  .checkbox input:checked ~ .checkmark:after {
+    display: block; }
+  .checkbox .checkmark:after {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: "";
+    display: none;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0; }
+
+.submit-btn {
+  text-align: right; }
+  @media screen and (max-width: 767px) {
+    .submit-btn {
+      margin-top: 0; } }
+  .submit-btn a {
+    max-width: 261px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none !important;
+    box-shadow: none;
+    font: Bold 13px/16px Muli !important;
+    margin: 10px 0 0 !important;
+    display: inline-flex !important; }
+    .submit-btn a:nth-child(1):after {
+      top: 43%; }
+
+.newsletter {
+  position: relative;
+  top: -50px;
+  background: #f8f8f8;
+  border: 1px solid #d8d8d8;
+  padding: 20px 24px; }
+  @media screen and (max-width: 767px) {
+    .newsletter {
+      display: none; } }
+  .newsletter p {
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0;
+    color: #3C3C3C;
+    font: 600 20px/25px Bookmania; }
+  .newsletter input {
+    background: #f8f8f8;
+    border: 1px solid #d8d8d8;
+    max-width: 211px;
+    height: 45px; }
+  .newsletter span {
+    font: 400 11px/16px Muli;
+    margin-left: 50px;
+    margin-right: 16px; }
+    @media screen and (max-width: 767px) {
+      .newsletter span {
+        margin: 10px 0; } }
+  .newsletter .submit-btn {
+    display: inline-block;
+    max-width: 211px;
+    margin-left: 50px;
+    width: 100%; }
+    @media screen and (max-width: 767px) {
+      .newsletter .submit-btn {
+        margin: 20px 0 0; } }
+    .newsletter .submit-btn a {
+      background: #415b74;
+      margin-top: 0 !important;
+      color: #FFFFFF; }
+      .newsletter .submit-btn a:before {
+        background: #FFFFFF; }
+      .newsletter .submit-btn a:after {
+        border-color: #FFFFFF; }
+
+footer {
+  background-image: url("../images/zambezi_logo_white.png");
+  background-repeat: no-repeat;
+  background-position: right -100px bottom -54px;
+  background-size: contain;
+  background-color: #272727; }
+  @media screen and (max-width: 767px) {
+    footer {
+      padding: 60px 0; } }
+  footer .footer-logo {
+    margin-bottom: 25px; }
+  footer a,
+  footer a:hover {
+    font: 400 14px/30px Muli;
+    color: #f8f8f8;
+    text-align: center; }
+  footer .social-icons {
+    margin-bottom: 10px; }
+  footer ul {
+    padding: 0; }
+    footer ul li:nth-child(1) a {
+      font-weight: bold; }
+  footer p {
+    color: #f8f8f8;
+    font: Bold 14px/30px Muli; }
+  footer .about-us__rating-star {
+    font: 600 20px/25px Bookmania;
+    margin-top: 40px; }
+  footer .rating-number {
+    margin-left: 20px;
+    color: #f8f8f8;
+    font: 600 20px/25px Bookmania; }
+  @media screen and (max-width: 767px) {
+    footer .partners {
+      display: none; } }
+  footer .policy {
+    font: 400 11px/22px Muli;
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding-bottom: 2.5em; }
+    @media screen and (max-width: 767px) {
+      footer .policy {
+        display: none; } }
 
 /*# sourceMappingURL=main.css.map */
